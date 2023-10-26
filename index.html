@@ -1,0 +1,30 @@
+<html>
+<body>
+	<div id="thumbs"></div>
+	<script>
+		const sizes = [
+			// 110, // legacy link to 150
+			150,
+			170, // size same or less 150
+			'170w',
+			260,
+			380,
+			// 450, // link to 600
+			// 550, // 404
+			600,
+			// 660, // 404
+			950,
+			1600,
+		];
+
+		const html = sizes.map(size => {
+			// const src = `https://st.depositphotos.com/1258191/2733/i/${size}/depositphotos_27338455-lol.jpg`; // max 950
+			const original = `https://st3.depositphotos.com/1022135/19522/i/${size}/depositphotos_195220812-lol.jpg`; // max 1600
+			const webp = `./${size}.webp`;
+			return `<div><div>< original ${size} webp ></div><div><img src="${original}" /><img src="${webp}" /></div></div>`;
+		});
+
+		document.getElementById('thumbs').innerHTML = html.join('');
+	</script>
+</body>
+</html>
